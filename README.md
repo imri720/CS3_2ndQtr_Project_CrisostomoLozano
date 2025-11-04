@@ -22,6 +22,7 @@
 -- This webpage shows all the 9 Competitive ranks in Valorant, from the lowest (Iron) to the highest (Radiant).
 6. **Mini-game**
 -- This webpage is a mini-game for the website, a Trivia Valorant Quiz! *(NOTE: This is also the webpage we will use JS on)*
+7. **
 
 ### Wireframe:
 #### ![Homepage](assets/Pages.png)
