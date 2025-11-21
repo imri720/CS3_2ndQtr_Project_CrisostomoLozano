@@ -155,10 +155,16 @@ a {
   box-shadow: var(--shadow);
 }
 
-.grid {
+.grid-index {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.grid-roles {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
 }
 
 /* cards and roles */
