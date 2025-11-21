@@ -25,8 +25,5 @@
 7. **Sources**
 -- This page will show all the sources used in the project in APA citation.
 
-### Website (in progress):
--- <html> <a href="index.html">Website landing page</a> </html>
-
 ### Wireframe:
 #### ![Homepage](assets/Pages.png)
