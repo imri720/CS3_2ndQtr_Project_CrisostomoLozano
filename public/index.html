@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Valofy — school project and reference site inspired by Valorant. Agents, maps, roles, ranks and a trivia mini-game." />
+  <meta name="keywords" content="Valorant, agents, maps, roles, ranks, quiz, fan site" />
+  <meta name="author" content="Imanuel Crisostomo, Martin Jayrald Lozano" />
+  <meta name="theme-color" content="#0b1115" />
+
+  <title>Valofy — Home</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/Logo.png">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- External JS (mobile nav helper; quiz included here but only used on mini-game page) -->
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Header & Navigation bar -->
+  <header class="header">
+    <div class="header-inner container">
+      <div class="brand">
+        <img src="/assets/Logo.png" alt="Valofy logo" width="40" height="40">
+        <h1>Valofy</h1>
+      </div>
+
+      <!-- Navigation links -->
+      <nav id="mainnav" class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="roles.html">Agent Roles</a>
+        <a href="agents.html">Agent List</a>
+        <a href="maps.html">Maps</a>
+        <a href="competitive.html">Competitive</a>
+        <a href="mini-game.html" class="js">Trivia Quiz</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- intro to home page -->
+  <main>
+    <section class="hero" style="background-image:url('/assets/Valorant.jpg');">
+      <div class="hero-inner">
+        <h2>VALORANT — A 5v5 tactical shooter</h2>
+        <p class="kicker">Agents with unique abilities</p>
+        <a class="play-btn" href="mini-game.html">Play Mini-game</a>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="panel">
+        <div class="grid">
+          <div>
+            <h3 class="large-title">Latest</h3>
+            <p class="lead">Welcome to Valofy, a school project and reference for agents, maps, and roles. Use the navigation bar to explore and try the trivia quiz.</p>
+          </div>
+          <div class="center">
+            <h3 class="kicker">Quick Links</h3>
+            <br>
+            <p><a href="agents.html"> All Agents  </a>
+            <a href="maps.html">- Maps </a>
+            <a href="competitive.html">- Ranks</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h3 class="kicker">Featured</h3>
+        <div class="grid" style="margin-top:12px;">
+          <div class="card">
+            <h3>Agent Roles</h3>
+                <p class="lead">Read about Duelists, Controllers, Initiators, and Sentinels on the Roles page.</p><br>
+                <a href="/assets/Jett.png"><img src="/assets/Jett.png"></a>
+            </div>
+          <div class="card">
+            <h3>Maps</h3>
+                <p class="lead">View all maps on the Maps page.</p><br>
+                <a href="/assets/Lotus.jpg"><img src="/assets/Lotus.jpg"></a>
+            </div>
+          <div class="card"><h3>Competitive</h3>
+                <p class="lead">See rank tiers and quick tips on the Competitive page.</p><br>
+                <a href="/assets/chamber.png"><img src="/assets/chamber.png"></a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- footer with link leading back to home page  -->
+  <footer class="footer">
+    <div class="small">Copyright: Crisostomo, Lozano — &copy 2025</div>
+    <div class="citation">
+        <div class="small">Back to <a href="index.html">Home</a></div>
+    </div>
+  </footer>
+</body>
+</html>
