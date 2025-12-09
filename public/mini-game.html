@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Mini trivia quiz" />
+  <meta name="keywords" content="quiz, trivia, valorant, mini-game" />
+  <meta name="author" content="Imanuel Crisostomo, MJ Lozano" />
+  <meta name="theme-color" content="#0b1115" />
+
+  <title>Mini-Game — Valorant Trivia</title>
+  <link rel="icon" type="image/png" href="/mnt/data/5341e31d-3831-4588-968b-e5bcf50d42bd.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="/assets/Logo.png">
+  <!-- script.js  -->
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner container">
+      <div class="brand">
+        <img src="/assets/Logo.png" alt="Valofy logo" width="40" height="40">
+        <h1>Valofy</h1>
+      </div>
+
+      <!-- Navigation links -->
+      <nav id="mainnav" class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="roles.html">Agent Roles</a>
+        <a href="agents.html">Agent List</a>
+        <a href="maps.html">Maps</a>
+        <a href="competitive.html">Competitive</a>
+        <a href="mini-game.html" class="js">Trivia Quiz</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="background-image:url('/assets/Valorant.jpg');height:200px">
+      <div class="hero-inner"><h2>Trivia Mini-Game</h2><p class="kicker">Test your Valorant knowledge</p></div>
+    </section>
+
+    <div class="container">
+      <section class="panel quiz-box">
+        <!-- quiz ui -->
+        <div id="quiz">
+          <div id="question" class="question">Question will appear here</div>
+          <div id="answers" class="answers"></div>
+          <div class="result" id="result" aria-live="polite"></div>
+          <div style="margin-top:12px;">
+            <button id="next" class="js" style="background:var(--accent)">Next</button>
+            <button id="restart" class="js" style="background:transparent;border:2px solid rgba(255,255,255,0.06);margin-left:8px">Restart</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="small">Copyright: Crisostomo, Lozano — &copy 2025</div>
+    <div class="citation">
+        <div class="small">Back to <a href="index.html">Home</a></div>
+    </div>
+  </footer>
+
+  <!-- Initialize the quiz -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      // init the quiz on this page
+      if(typeof ValorantQuiz !== 'undefined' && ValorantQuiz.init){
+        ValorantQuiz.init();
+      }
+    });
+  </script>
+</body>
+</html>
