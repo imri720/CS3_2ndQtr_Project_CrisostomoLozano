@@ -269,11 +269,13 @@ p {
   max-width: 820px;
   margin: 0 auto;
   padding: 10px;
+  color: var(--panel);
 }
 
 .question {
   font-size: 20px;
   margin-bottom: 12px;
+  color: var(--bg);
 }
 
 .answers {
