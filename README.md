@@ -27,3 +27,6 @@
 
 ### Wireframe:
 #### ![Homepage](assets/Pages.png)
+
+### Index:
+#### ![Index](public/index.html)
