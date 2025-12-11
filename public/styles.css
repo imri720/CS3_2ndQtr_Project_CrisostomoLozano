@@ -1,4 +1,4 @@
-/* theme */
+/* theme color vars */
 :root {
   --bg: #0b1115;
   --panel: #0f1519;
@@ -17,12 +17,23 @@
 body {
   background: linear-gradient(180deg, #eaeaea 0%, #ffffff 100%);
   color: var(--white);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, sans-serif;
 }
 
 a { 
     color: var(--bg);
     text-decoration: none; 
+}
+
+/* sir why does my github prefire the h4.lead a things SIR I TYPED ONE
+h AND IT SHOWS ME THIS ALREADY - iman */
+h4.lead a {
+    color: var(--accent);
+    text-decoration: none; 
+}
+
+h4.lead a:hover {
+    text-decoration: underline; 
 }
 
 .container {
@@ -86,6 +97,10 @@ a {
   font-weight: 700;
   color: rgb(255, 255, 255);
   box-shadow: 0 8px 24px rgba(224, 75, 85, 0.12);
+}
+
+#restart {
+  color: var(--bg);
 }
 
 /* agents */
@@ -287,9 +302,9 @@ p {
 .answer-btn {
   padding: 10px 14px;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(--bg);
   background: transparent;
-  color: var(--white);
+  color: var(--bg);
   text-align: left;
   font-weight: 600;
 }
