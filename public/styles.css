@@ -325,3 +325,73 @@ p {
   .hero h2 { font-size: 32px; }
   .header-inner { padding: 0 12px; }
 }
+/* Make card positioned */
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* Hide description by default */
+/* Make card positioned */
+.card2 {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card2:hover {
+  transform: translateY(-6px);
+}
+
+/* Smooth image transition */
+.card2 img {
+  width: 100%;
+  display: block;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Blur + slight zoom on hover */
+.card2:hover img {
+  filter: blur(4px);
+  transform: scale(1.05);
+}
+
+/* Description overlay */
+.card2 .small {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.75);
+  color: black;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show description */
+.card2:hover .small {
+  opacity: 1;
+} 
+.card2 h3,
+.card2 .role-badge {
+  color: black;
+}
+
+.img-wrapper {
+  height: 250px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  width: 100%;
+}
