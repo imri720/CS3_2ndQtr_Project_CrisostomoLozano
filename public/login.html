@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login to Valofy to personalize your experience.">
+  <title>Valofy — Log In</title>
+
+    <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/Logo.png">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner container">
+      <div class="brand">
+        <img src="assets/Logo.png" alt="Valofy logo" width="40" height="40">
+        <h1>VALOFY</h1>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="roles.html">Agent Roles</a>
+        <a href="agents.html">Agent List</a>
+        <a href="maps.html">Maps</a>
+        <a href="competitive.html">Competitive</a>
+        <a href="mini-game.html" class="js">Trivia Quiz</a>
+        <a href="login.html">Log In</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="background-image:url('assets/Valorant.jpg');">
+      <div class="hero-inner">
+        <h2>VALORANT</h2>
+        <p class="kicker">A 5v5 tactical shooter</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <section class="panel" style="max-width:600px;margin:auto;text-align:center;">
+        <h2 style="color: black;">Log In</h2>
+        <form id="loginForm">
+          <label for="nickname" style="color:black">Nickname</label><br>
+          <input type="text" id="nickname" required style="color: gray;"><br><br>
+          <label for="password" style="color:black">Password</label><br>
+          <input type="password" id="password" required style="color: gray;"><br><br>
+          <button type="submit" class="js" style="background:var(--accent)">Log In</button>
+        </form>
+        <div id="loginMessage" style="margin-top:12px;color:#f55;"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="small">Copyright: Crisostomo, Lozano — &copy 2025</div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const message = document.getElementById('loginMessage');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      const nickname = document.getElementById('nickname').value.trim();
+      const password = document.getElementById('password').value;
+
+      if(nickname && password){
+        // Save to localStorage
+        localStorage.setItem('nickname', nickname);
+        localStorage.setItem('password', password);
+        message.style.color = 'lime';
+        message.textContent = `Welcome, ${nickname}! Redirecting...`;
+        setTimeout(()=>{ window.location.href = 'index.html'; }, 1000);
+      } else {
+        message.style.color = '#f55';
+        message.textContent = 'Please fill in both fields.';
+      }
+    });
+  </script>
+</body>
+</html>

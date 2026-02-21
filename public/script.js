@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', function () {
 /* ---------- Trivia Quiz (used only on mini-game.html) ---------- */
 /* All quiz code is encapsulated under the `ValorantQuiz` namespace */
 const ValorantQuiz = (function(){
+
+  // Quiz questions
   const quizData = [
     { q: "Which role uses smokes and area denial primarily?", choices:["Duelist","Controller","Initiator","Sentinel"], a:1 },
     { q: "How many players per team in a standard match?", choices:["3","4","5","6"], a:2 },
@@ -23,24 +25,28 @@ const ValorantQuiz = (function(){
   let idx = 0;
   let score = 0;
   let elements = null;
+  const nickname = localStorage.getItem('nickname') || 'Player';
 
+  // Cache selectors once
   function cacheSelectors(){
     elements = {
       qElm: document.getElementById('question'),
       aElm: document.getElementById('answers'),
       resElm: document.getElementById('result'),
       nextBtn: document.getElementById('next'),
-      restartBtn: document.getElementById('restart')
+      restartBtn: document.getElementById('restart'),
+      playerNameElm: document.getElementById('playerName')
     };
+    // Initialize player name display (uses the localStorage from earlier :)
+    elements.playerNameElm.textContent = `${nickname}, your current score: 0 / ${quizData.length}`;
   }
 
   // Load question i
   function loadQuestion(i){
-    if(!elements) cacheSelectors();
     elements.resElm.textContent = '';
     elements.aElm.innerHTML = '';
     const item = quizData[i];
-    elements.qElm.textContent = (i+1)+'. ' + item.q;
+    elements.qElm.textContent = `${i+1}. ${item.q}`;
     item.choices.forEach((c, ci) => {
       const btn = document.createElement('button');
       btn.className = 'answer-btn';
@@ -50,8 +56,8 @@ const ValorantQuiz = (function(){
     });
   }
 
+  // Handle answer selection
   function selectAnswer(choiceIndex, correctIndex, btn){
-    // disable all buttons after answer
     const buttons = Array.from(elements.aElm.querySelectorAll('button'));
     buttons.forEach(b => b.disabled = true);
     if(choiceIndex === correctIndex){
@@ -60,25 +66,32 @@ const ValorantQuiz = (function(){
       score++;
     } else {
       btn.style.borderColor = 'rgba(255,80,80,0.16)';
-      elements.resElm.textContent = 'Incorrect — correct: ' + quizData[idx].choices[correctIndex];
+      elements.resElm.textContent = `Incorrect — correct: ${quizData[idx].choices[correctIndex]}`;
     }
+    // Update current score display
+    elements.playerNameElm.textContent = `${nickname}, current score: ${score} / ${quizData.length}`;
   }
 
+  // Wire next and restart buttons
   function wireButtons(){
     elements.nextBtn.addEventListener('click', function(){
       idx++;
       if(idx >= quizData.length){
-        elements.resElm.textContent = `Quiz finished. Score: ${score} / ${quizData.length}`;
+        elements.resElm.textContent = `${nickname}, you got a score of ${score} / ${quizData.length}`;
         elements.nextBtn.disabled = true;
       } else {
         loadQuestion(idx);
       }
+      // Always update score display even during quiz
+      elements.playerNameElm.textContent = `${nickname}, current score: ${score} / ${quizData.length}`;
     });
+
     elements.restartBtn.addEventListener('click', function(){
       idx = 0; score = 0;
       elements.nextBtn.disabled = false;
       loadQuestion(0);
       elements.resElm.textContent = '';
+      elements.playerNameElm.textContent = `${nickname}, your current score: 0 / ${quizData.length}`;
     });
   }
 
@@ -91,4 +104,5 @@ const ValorantQuiz = (function(){
 
   // Expose only init
   return { init: init };
+
 })();

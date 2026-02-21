@@ -36,7 +36,7 @@
         <a href="maps.html">Maps</a>
         <a href="competitive.html">Competitive</a>
         <a href="mini-game.html" class="js">Trivia Quiz</a>
-        <a href="sources.html">Sources</a>
+        <a href="login.html">Log In</a>
       </nav>
     </div>
   </header>
@@ -50,6 +50,33 @@
         <a class="play-btn" href="mini-game.html">Test Yourself</a>
       </div>
     </section>
+
+  <!-- We crammed this part into the index file just to give the localStorage a use -->
+   <div class="container">
+<section class="panel" id="welcomePanel">
+  <h3 class="header" id="welcomeText">WELCOME, User</h3>
+</section>
+
+<script>
+  // Display welcome message if user is logged in
+  const nickname = localStorage.getItem('nickname');
+  if(nickname){
+    const panel = document.getElementById('welcomePanel');
+    const text = document.getElementById('welcomeText');
+    text.textContent = `WELCOME, ${nickname}.`;
+    panel.style.display = 'block';
+  }
+
+  // Change nav bar link from Sources to Log In
+  const navLinks = document.querySelectorAll('#mainnav a');
+  navLinks.forEach(link => {
+    if(link.textContent.trim() === 'Sources'){
+            link.textContent = 'Log In';
+          link.href = 'login.html';
+        }
+      });
+    </script>
+</div>
 
     <div class="container">
       <section class="panel">
